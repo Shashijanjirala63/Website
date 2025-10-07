@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Private Feedback | Dr. Shashi Janjirala</title>
+    <meta name="description" content="Submit private and confidential feedback directly to Dr. Shashi Janjirala's team to help improve heart care services.">
+    
+    <link rel="icon" href="/assets/logo/favicon-32x32.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* Define color palette */
+        :root {
+            --dark-blue: #1a2a46;
+            --light-blue: #5a88bf;
+            --background-light: #f4f7f6;
+            --text-grey: #666666;
+            --white: #ffffff;
+            --form-border: #cccccc;
+        }
+
+        /* Basic Setup */
+        body { 
+            font-family: 'Roboto', sans-serif; 
+            margin: 0; 
+            padding: 0; 
+            background-color: var(--background-light); 
+            color: var(--dark-blue); 
+            line-height: 1.6;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start; /* Align content to the top */
+            min-height: 100vh;
+        }
+
+        .container { 
+            max-width: 600px; 
+            width: 90%;
+            margin: 50px auto; 
+            padding: 30px; 
+            background-color: var(--white); 
+            border-radius: 8px; 
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1); 
+            text-align: left;
+        }
+
+        /* Content Styling */
+        h1 { 
+            color: var(--dark-blue); 
+            font-size: 2em; 
+            margin-bottom: 10px; 
+            text-align: center;
+        }
+
+        .header-text { 
+            font-size: 1em; 
+            margin-bottom: 25px; 
+            color: var(--text-grey);
+            text-align: center;
+        }
+
+        /* Form Styling */
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--dark-blue);
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid var(--form-border);
+            border-radius: 4px;
+            box-sizing: border-box; /* Important for padding/width calculation */
+            font-size: 1em;
+            font-family: inherit;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        /* Submit Button */
+        button {
+            display: block;
+            width: 100%;
+            background-color: var(--dark-blue);
+            color: var(--white);
+            padding: 15px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 1.1em;
+            font-weight: 700;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        button:hover {
+            background-color: var(--light-blue);
+            transform: translateY(-2px);
+        }
+        
+        /* Footer Styling */
+        footer { 
+            width: 100%;
+            padding: 10px 0;
+            margin-top: 30px;
+            font-size: 0.8em; 
+            color: var(--text-grey); 
+            text-align: center;
+        }
+
+        footer a {
+            color: var(--light-blue);
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header style="text-align: center; margin-bottom: 20px;">
+             <img src="/assets/logo/sj63logo.png" alt="Dr. Shashi Janjirala Logo" style="max-width: 80px; margin-bottom: 10px;">
+        </header>
+
+        <h1>Submit Private Feedback</h1>
+        <p class="header-text">Your confidentiality is our priority. Please use this form for private or sensitive feedback. Your message goes directly to our dedicated SPOC team.</p>
+
+        <form name="feedback" method="POST" action="/thank-you.html" data-netlify="true" data-netlify-honeypot="bot-field">
+            <input type="hidden" name="form-name" value="feedback" />
+            
+            <p class="hidden-field" style="display: none;">
+                <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
+            </p>
+
+            <div class="form-group">
+                <label for="name">Your Name (Optional)</label>
+                <input type="text" id="name" name="name">
+            </div>
+
+            <div class="form-group">
+                <label for="contact">Email or Mobile Number (Optional, for follow-up)</label>
+                <input type="text" id="contact" name="contact">
+            </div>
+
+            <div class="form-group">
+                <label for="feedback_type">Feedback Type</label>
+                <select id="feedback_type" name="feedback_type" required>
+                    <option value="">Select a category</option>
+                    <option value="Suggestion">Suggestion for Improvement</option>
+                    <option value="Experience">Service Experience</option>
+                    <option value="Confidential">Confidential/Sensitive Matter</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="message">Your Feedback/Message (Required)</label>
+                <textarea id="message" name="message" required></textarea>
+            </div>
+
+            <button type="submit">Send Private Feedback</button>
+        </form>
+
+        <footer>
+            <p>Your feedback is confidential. | <a href="/privacy.html">Privacy Policy</a></p>
+            <p>Go back to <a href="/reviews.html">Review Options</a></p>
+        </footer>
+    </div>
+</body>
+</html>

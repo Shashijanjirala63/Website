@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Share Your Experience | Dr. Shashi Janjirala - Heart Specialist</title>
+    <meta name="description" content="We value your feedback. Share your experience with Dr. Shashi Janjirala on Google or submit private feedback to help us improve our heart care services.">
+    
+    <link rel="icon" href="/assets/logo/favicon-32x32.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        /* Define color palette */
+        :root {
+            --dark-blue: #1a2a46;
+            --light-blue: #5a88bf;
+            --google-blue: #4285F4;
+            --background-light: #f4f7f6;
+            --text-grey: #666666;
+            --white: #ffffff;
+        }
+
+        /* Basic Reset and Typography */
+        body { 
+            font-family: 'Roboto', sans-serif; 
+            margin: 0; 
+            padding: 0; 
+            background-color: var(--background-light); 
+            color: var(--dark-blue); 
+            text-align: center; 
+            line-height: 1.6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container { 
+            max-width: 600px; 
+            margin: 50px auto; 
+            padding: 30px; 
+            background-color: var(--white); 
+            border-radius: 8px; 
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1); 
+        }
+
+        /* Content Styling */
+        h1 { 
+            color: var(--dark-blue); 
+            font-size: 2em; 
+            margin-bottom: 20px; 
+        }
+
+        p { 
+            font-size: 1.1em; 
+            margin-bottom: 30px; 
+            color: var(--text-grey);
+        }
+        
+        /* Button Group Layout */
+        .button-group { 
+            display: flex; 
+            flex-direction: column; 
+            gap: 15px; 
+            max-width: 350px; 
+            margin: 0 auto; 
+        }
+
+        /* Generic Button Styling */
+        .review-button {
+            display: inline-flex; 
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            padding: 15px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1em;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        .review-button i { 
+            margin-right: 10px; 
+        }
+
+        /* Google Review Button (Primary CTA) */
+        .review-button.google { 
+            background-color: var(--google-blue); 
+        } 
+        .review-button.google:hover { 
+            background-color: #3367d6; 
+            transform: translateY(-2px); 
+        }
+
+        /* Private Feedback Button (Secondary CTA) */
+        .review-button.private { 
+            background-color: var(--dark-blue); 
+        } 
+        .review-button.private:hover { 
+            background-color: #334e7a; 
+            transform: translateY(-2px); 
+        }
+
+        /* Footer Styling (Positioned outside the main container for cleanup) */
+        footer { 
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 10px 0;
+            font-size: 0.8em; 
+            color: var(--text-grey); 
+            background-color: var(--background-light);
+        }
+
+        footer a {
+            color: var(--light-blue);
+            text-decoration: none;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 480px) {
+            .container {
+                margin: 20px;
+                padding: 20px;
+            }
+            h1 {
+                font-size: 1.6em;
+            }
+            .review-button { 
+                width: 100%; 
+            }
+            footer {
+                position: static;
+                margin-top: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="/assets/logo/sj63logo.png" alt="Dr. Shashi Janjirala Logo" style="max-width: 100px; margin-bottom: 20px;">
+        
+        <h1>Share Your Experience with Dr. Shashi Janjirala</h1>
+        <p>Your valuable feedback helps us continuously improve our heart care services and reach more patients in need.</p>
+        
+        <div class="button-group">
+            
+            <a href="https://share.google/zl9VItPvlMGGfOtE4" target="_blank" rel="noopener noreferrer" class="review-button google">
+                <i class="fab fa-google"></i> Leave a Review on Google
+            </a>
+            
+            <a href="/contact-feedback.html" class="review-button private">
+                <i class="fas fa-comment-dots"></i> Submit Private Feedback
+            </a>
+        </div>
+    </div>
+    
+    <footer>
+        <p>&copy; 2025 Dr. Shashi Janjirala. All rights reserved. | <a href="/privacy.html">Privacy Policy</a></p>
+    </footer>
+</body>
+</html>

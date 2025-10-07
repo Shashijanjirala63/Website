@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Shasi Vardhan Janjirala | Interventional Cardiology & Structural Heart Specialist</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- 1. DESIGN VARIABLES & GLOBALS --- */
+        :root {
+            --royal-blue: #003366;
+            --orange-cta: #FF6600;
+            --off-white: #f5f5f5;
+            --cinzel-font: 'Cinzel', serif;
+            /* Using a common, similar serif for Perpetua placeholder */
+            --body-font: 'Georgia', serif; 
+        }
+
+        /* Base Reset and Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--body-font);
+            line-height: 1.6;
+            color: #333;
+            background-color: var(--off-white);
+            padding-top: 100px; /* Space for the fixed header/nav bar */
+        }
+
+        a {
+            color: var(--royal-blue);
+            text-decoration: none;
+        }
+        
+        /* --- 2. HEADER & NAVIGATION (STICKY BAR) --- */
+        .header-container {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .header {
+            background-color: var(--royal-blue);
+            color: white;
+            padding: 10px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header-name {
+            font-family: var(--cinzel-font);
+            font-size: 1.1em;
+            font-weight: 700;
+            margin-bottom: 2px;
+        }
+
+        .header-title {
+            font-size: 0.7em;
+            opacity: 0.8;
+            white-space: nowrap;
+        }
+
+        .cta-button {
+            background-color: var(--orange-cta);
+            color: white;
+            padding: 8px 12px;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 0.8em;
+            transition: background-color 0.3s;
+            white-space: nowrap;
+        }
+        
+        .cta-button:hover {
+            background-color: #CC5500;
+        }
+        
+        .nav-bar {
+            background-color: white;
+            border-bottom: 1px solid #ddd;
+            padding: 10px 5%;
+        }
+
+        .nav-bar ul {
+            list-style: none;
+            display: flex;
+            justify-content: space-around;
+        }
+        
+        .nav-bar a {
+            font-family: var(--cinzel-font);
+            color: var(--royal-blue);
+            font-size: 0.85em;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        
+        .nav-bar a:hover {
+            color: var(--orange-cta);
+        }
+
+        /* --- 3. HERO SECTION & PORTRAIT --- */
+        .hero-section {
+            display: flex;
+            flex-direction: column-reverse;
+            align-items: center;
+            padding: 40px 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+            gap: 30px;
+            text-align: center;
+        }
+
+        @media (min-width: 768px) {
+            .hero-section {
+                flex-direction: row;
+                justify-content: space-between;
+                text-align: left;
+            }
+        }
+
+        .hero-text-content {
+            max-width: 600px;
+        }
+
+        .hero-text-content h2 {
+            font-family: var(--cinzel-font);
+            color: var(--royal-blue);
+            font-size: 1.8em;
+            margin-bottom: 20px;
+        }
+
+        .hero-text-content p {
+            font-size: 1em;
+            margin-bottom: 15px;
+        }
+
+        .expertise-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px 20px;
+        }
+        
+        .expertise-list li {
+            font-weight: bold;
+            color: var(--royal-blue);
+            font-size: 0.9em;
+            position: relative;
+            padding-left: 15px;
+        }
+        
+        .expertise-list li::before {
+            content: '✓';
+            color: var(--orange-cta);
+            font-size: 1.1em;
+            position: absolute;
+            left: 0;
+        }
+
+        .doctor-portrait {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 5px solid var(--royal-blue);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        /* --- 4. SERVICES AUTO-SLIDE CANVAS (6 CATEGORIES) --- */
+        .services-section {
+            padding: 40px 5%;
+            background-color: white;
+            text-align: center;
+        }
+
+        .services-section h2 {
+            font-family: var(--cinzel-font);
+            color: var(--royal-blue);
+            margin-bottom: 30px;
+            font-size: 1.6em;
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .service-card {
+            position: relative;
+            height: 200px;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+            cursor: pointer;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .service-card-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(40%); /* Subtle professional filter */
+        }
+        
+        .service-card-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 51, 102, 0.7); /* Royal Blue 70% opacity */
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .service-card-overlay h3 {
+            font-family: var(--cinzel-font);
+            font-size: 1.2em;
+            margin-bottom: 10px;
+            line-height: 1.2;
+        }
+        
+        .service-card-overlay .view-link {
+            font-size: 0.9em;
+            font-weight: bold;
+            color: var(--orange-cta);
+            border-bottom: 2px solid var(--orange-cta);
+        }
+
+        /* --- 5. FLOATING WHATSAPP ICON --- */
+        .whatsapp-float-icon {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: var(--orange-cta);
+            color: white;
+            font-size: 2.2em;
+            width: 50px;
+            height: 50px;
+            line-height: 55px;
+            text-align: center;
+            border-radius: 50%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+            z-index: 999;
+            transition: transform 0.3s;
+        }
+
+        .whatsapp-float-icon:hover {
+            transform: scale(1.1);
+        }
+
+        /* --- 6. FOOTER --- */
+        .footer {
+            background-color: var(--royal-blue);
+            color: white;
+            padding: 30px 5%;
+            text-align: center;
+            font-size: 0.85em;
+            margin-top: 40px;
+        }
+
+        .footer-name {
+            font-family: var(--cinzel-font);
+            font-weight: 700;
+            font-size: 1em;
+            margin-bottom: 5px;
+        }
+
+        .footer-contact p {
+            margin-bottom: 3px;
+        }
+
+        .footer a {
+            color: white;
+            text-decoration: none;
+            border-bottom: 1px dotted white;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-container">
+        <header class="header">
+            <div class="header-content">
+                <h1 class="header-name">Dr. Shasi Vardhan Janjirala</h1>
+                <p class="header-title">DM (Cardiology) | Endovascular & Structural Heart Specialist</p>
+            </div>
+            <a href="https://wa.me/918558880602?text=Hello%20Dr.%20Shasi%20Vardhan%20Janjirala,%20I%20would%20like%20to%20book%20an%20appointment%20or%20ask%20about%20your%20services." 
+               target="_blank" class="cta-button">Book Appointment Now</a>
+        </header>
+        
+        <nav class="nav-bar">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#services-section">Services</a></li>
+                <li><a href="testimonials.html">My Testimonials</a></li>
+                <li><a href="about.html">About Doctor</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <section class="hero-section">
+        <div class="hero-image-container">
+            <img src="drshashi_portrait.png" alt="Portrait of Dr. Shasi Vardhan Janjirala" class="doctor-portrait">
+        </div>
+        <div class="hero-text-content">
+            <h2>Pioneering Advanced Heart & Vascular Treatments</h2>
+            <p>Dr. Janjirala is a highly specialized **Consultant Interventional Cardiologist, Endovascular Specialist, & Structural Heart Interventions Specialist** based in Hyderabad.</p>
+            <p>He is committed to providing cutting-edge, patient-centered care for high-risk cardiovascular and peripheral vascular diseases. </p>
+            
+            <ul class="expertise-list">
+                <li>Certified CTO Operator</li>
+                <li>Certified ROTA Operator</li>
+                <li>Certified TAVI Operator</li>
+                <li>13+ Years of Specialized Experience</li>
+            </ul>
+        </div>
+    </section>
+    
+    <section id="services-section" class="services-section">
+        <h2>Our Specialized Areas of Expertise</h2>
+        <div class="service-grid">
+            
+            <a href="services/coronary.html" class="service-card">
+                <img src="placeholder-coronary.jpg" alt="Coronary Artery Interventions" class="service-card-image">
+                <div class="service-card-overlay">
+                    <h3>Coronary Artery Interventions</h3>
+                    <p class="view-link">View 12 Procedures</p>
+                </div>
+            </a>
+            
+            <a href="services/structural.html" class="service-card">
+                <img src="placeholder-structural.jpg" alt="Structural Heart & Valve Procedures" class="service-card-image">
+                <div class="service-card-overlay">
+                    <h3>Structural Heart & Valve Procedures</h3>
+                    <p class="view-link">View 16 Procedures</p>
+                </div>
+            </a>
+
+            <a href="services/peripheral.html" class="service-card">
+                <img src="placeholder-peripheral.jpg" alt="Peripheral & Aortic Interventions" class="service-card-image">
+                <div class="service-card-overlay">
+                    <h3>Peripheral & Aortic Interventions</h3>
+                    <p class="view-link">View 11 Procedures</p>
+                </div>
+            </a>
+
+            <a href="services/venous.html" class="service-card">
+                <img src="placeholder-venous.jpg" alt="Deep Vein & Pulmonary Interventions" class="service-card-image">
+                <div class="service-card-overlay">
+                    <h3>Deep Vein & Pulmonary Interventions</h3>
+                    <p class="view-link">View 9 Procedures</p>
+                </div>
+            </a>
+
+            <a href="services/ep.html" class="service-card">
+                <img src="placeholder-ep.jpg" alt="Cardiac Rhythm Management" class="service-card-image">
+                <div class="service-card-overlay">
+                    <h3>Cardiac Rhythm Management (EP)</h3>
+                    <p class="view-link">View 7 Procedures</p>
+                </div>
+            </a>
+
+            <a href="services/diagnostics.html" class="service-card">
+                <img src="placeholder-diag.jpg" alt="Advanced Diagnostics & Support" class="service-card-image">
+                <div class="service-card-overlay">
+                    <h3>Advanced Diagnostics & Support</h3>
+                    <p class="view-link">View Diagnostics</p>
+                </div>
+            </a>
+            
+        </div>
+    </section>
+    
+    <a href="https://wa.me/918558880602?text=Hello%20Dr.%20Shasi%20Vardhan%20Janjirala,%20I%20would%20like%20to%20book%20an%20appointment%20or%20ask%20about%20your%20services." 
+       target="_blank" 
+       class="whatsapp-float-icon" 
+       title="WhatsApp Dr. Janjirala">
+        &#9990;
+    </a>
+
+    <footer class="footer">
+        <div class="footer-contact">
+            <p class="footer-name">Dr. Shasi Vardhan Janjirala, DM (Cardiology)</p>
+            <p><strong>PACE Hospitals, HITEC City, Hyderabad</strong></p>
+            <p>Email: <a href="mailto:mailme@sashijanjirala63.com">mailme@sashijanjirala63.com</a></p>
+            <p>Call Us: 040 48486868| WhatsApp: <a href="https://wa.me/918558880602" target="_blank">8558880602</a></p>
+        </div>
+    </footer>
+</body>
+</html>

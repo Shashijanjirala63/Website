@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Dr. Shasi Vardhan Janjirala | Credentials & Expertise</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- 1. DESIGN VARIABLES & GLOBALS --- */
+        :root {
+            --royal-blue: #003366;
+            --orange-cta: #FF6600;
+            --off-white: #f5f5f5;
+            --cinzel-font: 'Cinzel', serif;
+            --body-font: 'Georgia', serif; /* Perpetua Placeholder */
+        }
+
+        /* Base Reset and Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--body-font);
+            line-height: 1.6;
+            color: #333;
+            background-color: white; /* Use white background for content pages */
+            padding-top: 100px;
+        }
+
+        a {
+            color: var(--royal-blue);
+            text-decoration: none;
+        }
+        
+        h2, h3 {
+            font-family: var(--cinzel-font);
+            color: var(--royal-blue);
+        }
+
+        /* --- 2. HEADER & NAVIGATION (STICKY BAR) --- */
+        .header-container {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .header {
+            background-color: var(--royal-blue);
+            color: white;
+            padding: 10px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header-name { font-size: 1.1em; font-weight: 700; }
+        .header-title { font-size: 0.7em; opacity: 0.8; white-space: nowrap; }
+
+        .cta-button {
+            background-color: var(--orange-cta);
+            color: white;
+            padding: 8px 12px;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 0.8em;
+            transition: background-color 0.3s;
+            white-space: nowrap;
+        }
+        
+        .cta-button:hover { background-color: #CC5500; }
+        
+        .nav-bar { background-color: white; border-bottom: 1px solid #ddd; padding: 10px 5%; }
+
+        .nav-bar ul { list-style: none; display: flex; justify-content: space-around; }
+        
+        .nav-bar a {
+            font-family: var(--cinzel-font);
+            color: var(--royal-blue);
+            font-size: 0.85em;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        
+        .nav-bar a:hover { color: var(--orange-cta); }
+
+        /* --- 3. PAGE CONTENT LAYOUT --- */
+        .page-content {
+            max-width: 1000px;
+            margin: 30px auto;
+            padding: 0 5%;
+        }
+
+        .page-content h2 {
+            font-size: 2.2em;
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 3px solid var(--royal-blue);
+            padding-bottom: 10px;
+        }
+
+        .profile-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .profile-header h3 {
+            font-size: 1.5em;
+            color: var(--orange-cta);
+            margin-bottom: 5px;
+        }
+
+        .profile-header p {
+            font-size: 1.1em;
+            color: #555;
+        }
+
+        .section-box {
+            background-color: var(--off-white);
+            border: 1px solid #ddd;
+            padding: 25px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+
+        .section-box h3 {
+            font-size: 1.4em;
+            margin-bottom: 15px;
+        }
+
+        .section-box ul {
+            list-style: none;
+        }
+
+        /* Professional Checkmark Styling (For Certifications and Training) */
+        .professional-list li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 10px;
+            font-size: 1em;
+        }
+        
+        .professional-list li::before {
+            content: '✓';
+            color: var(--orange-cta);
+            font-size: 1.1em;
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-weight: 700;
+        }
+
+        .bio-text {
+            margin-bottom: 20px;
+            font-size: 1.1em;
+        }
+
+        /* --- 4. FLOATING WHATSAPP ICON --- */
+        .whatsapp-float-icon {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: var(--orange-cta);
+            color: white;
+            font-size: 2.2em;
+            width: 50px;
+            height: 50px;
+            line-height: 55px;
+            text-align: center;
+            border-radius: 50%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+            z-index: 999;
+            transition: transform 0.3s;
+        }
+
+        .whatsapp-float-icon:hover { transform: scale(1.1); }
+
+        /* --- 5. FOOTER --- */
+        .footer {
+            background-color: var(--royal-blue);
+            color: white;
+            padding: 30px 5%;
+            text-align: center;
+            font-size: 0.85em;
+            margin-top: 40px;
+        }
+
+        .footer-name { font-family: var(--cinzel-font); font-weight: 700; font-size: 1em; margin-bottom: 5px; }
+
+        .footer a { color: white; text-decoration: none; border-bottom: 1px dotted white; }
+    </style>
+</head>
+<body>
+
+    <div class="header-container">
+        <header class="header">
+            <div class="header-content">
+                <h1 class="header-name">Dr. Shasi Vardhan Janjirala</h1>
+                <p class="header-title">DM (Cardiology) | Endovascular & Structural Heart Specialist</p>
+            </div>
+            <a href="https://wa.me/918558880602?text=Hello%20Dr.%20Shasi%20Vardhan%20Janjirala,%20I%20would%20like%20to%20book%20an%20appointment%20or%20ask%20about%20your%20services." 
+               target="_blank" class="cta-button">Book Appointment Now</a>
+        </header>
+        
+        <nav class="nav-bar">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#services-section">Services</a></li>
+                <li><a href="testimonials.html">My Testimonials</a></li>
+                <li><a href="about.html">About Doctor</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <section class="page-content">
+        <h2>About Dr. Shasi Vardhan Janjirala</h2>
+
+        <div class="profile-header">
+            <h3>Consultant Interventional Cardiologist, Endovascular Specialist, & Structural Heart Interventions Specialist</h3>
+            <p>Pioneering advanced, minimally invasive treatments at **PACE Hospitals, Hitech City**.</p>
+        </div>
+
+        <div class="bio-text">
+            <p>Dr. Shasi Vardhan Janjirala is a distinguished Interventional Cardiologist with **over 13 years of specialized experience** in treating high-risk cardiovascular and peripheral vascular diseases. Known for his swift decision-making and meticulous surgical skills, his practice is founded on advanced techniques and unwavering patient compassion. He is committed to providing cutting-edge, patient-centered care for simple and complex cardiac and vascular procedures.</p>
+        </div>
+
+        <div class="section-box">
+            <h3>Global Certifications & Expertise</h3>
+            <ul class="professional-list">
+                <li>**Certified CTO Operator:** Expertise in specialized PCI techniques for Chronic Total Occlusions (CTO). Trained at Sakurabashi Watanabe Advanced Centre, Osaka, Japan.</li>
+                <li>**Certified ROTA Operator:** Skilled in Rotablation, using a diamond-tipped burr to treat severely calcified coronary artery blockages. Trained at Mount Sinai, NY, USA.</li>
+                <li>**Certified TAVI Operator:** Proficient in Transcatheter Aortic Valve Implantation (TAVI) and other structural interventions. Trained at UMC, Astana, KZ.</li>
+            </ul>
+        </div>
+
+        <div class="section-box">
+            <h3>Education and Professional Milestones</h3>
+            <ul class="professional-list">
+                <li>**DM (Cardiology):** Kurnool Government Medical College</li>
+                <li>**Post graduation (Internal medicine):** GMCH 32, Chandigarh</li>
+                <li>**MBBS:** PIMS, Karimnagar</li>
+            </ul>
+
+            <h3 style="margin-top: 25px;">Specialized Training</h3>
+            <ul class="professional-list">
+                <li>**Pediatric Interventions:** Advanced training at Sree Chitra Tirunal, Trivandrum.</li>
+                <li>**Peripheral Interventions:** Specialized training at ICE Delhi.</li>
+            </ul>
+        </div>
+    </section>
+
+    <a href="https://wa.me/918558880602?text=Hello%20Dr.%20Shasi%20Vardhan%20Janjirala,%20I%20would%20like%20to%20book%20an%20appointment%20or%20ask%20about%20your%20services." 
+       target="_blank" 
+       class="whatsapp-float-icon" 
+       title="WhatsApp Dr. Janjirala">
+        &#9990;
+    </a>
+
+    <footer class="footer">
+        <div class="footer-contact">
+            <p class="footer-name">Dr. Shasi Vardhan Janjirala, DM (Cardiology)</p>
+            <p><strong>PACE Hospitals, HITEC City, Hyderabad</strong></p>
+            <p>Email: <a href="mailto:mailme@sashijanjirala63.com">mailme@sashijanjirala63.com</a></p>
+            <p>Call Us: 040 48486868 | WhatsApp: <a href="https://wa.me/918558880602" target="_blank">8558880602</a></p>
+        </div>
+    </footer>
+</body>
+</html>

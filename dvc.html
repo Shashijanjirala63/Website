@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Shashi Janjirala - Digital Card</title>
+    <link rel="icon" href="/assets/logo/favicon-32x32.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-blue-dark: #1a2a46; /* Adjusted darker blue for text based on logo */
+            --primary-blue-light: #5a88bf; /* Adjusted lighter blue from logo shield */
+            --background-white: #ffffff;
+            --text-light-grey: #666666;
+            --cinzel-font: 'Cinzel', serif;
+            --roboto-font: 'Roboto', sans-serif;
+        }
+
+        body {
+            font-family: var(--roboto-font);
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-white);
+            color: var(--primary-blue-dark);
+            text-align: center;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .container {
+            max-width: 450px; /* Optimized for mobile vertical viewing */
+            margin: 0 auto;
+            padding: 20px 15px;
+            background-color: var(--background-white);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden; /* Ensures no content spills */
+        }
+
+        .logo-section {
+            padding-bottom: 20px;
+        }
+        .logo-section img {
+            max-width: 150px; /* Size of the shield icon */
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        .doctor-name {
+            font-family: var(--cinzel-font);
+            font-size: 1.8em;
+            font-weight: 700;
+            color: var(--primary-blue-dark);
+            margin-bottom: 5px;
+        }
+
+        .designation {
+            font-size: 0.95em;
+            color: var(--primary-blue-dark);
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 15px;
+        }
+        
+        .credentials {
+            font-size: 0.9em;
+            color: var(--text-light-grey);
+            margin-bottom: 25px;
+        }
+
+        .portrait {
+            margin: 20px auto;
+            width: 160px; /* Large enough for prominence */
+            height: 160px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 4px solid var(--primary-blue-light); /* Accent border */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .portrait img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .contact-info {
+            margin: 25px 0;
+            font-size: 1em;
+            color: var(--primary-blue-dark);
+        }
+        .contact-info a {
+            color: var(--primary-blue-dark);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+            padding: 8px 0;
+            border: 1px solid transparent;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, border-color 0.3s ease;
+        }
+        .contact-info a:hover {
+            background-color: rgba(0, 0, 0, 0.05);
+            border-color: var(--primary-blue-light);
+        }
+        .contact-info i {
+            margin-right: 8px;
+            color: var(--primary-blue-light); /* Icon color */
+        }
+
+        .btn-primary, .btn-secondary {
+            display: block;
+            width: 85%;
+            margin: 15px auto;
+            padding: 14px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .btn-primary {
+            background-color: var(--primary-blue-light);
+            color: var(--background-white);
+            font-size: 1.1em;
+        }
+        .btn-primary:hover {
+            background-color: var(--primary-blue-dark);
+            transform: translateY(-2px);
+        }
+        .btn-secondary {
+            background-color: var(--background-white);
+            color: var(--primary-blue-dark);
+            border: 2px solid var(--primary-blue-light);
+            font-size: 1em;
+        }
+        .btn-secondary:hover {
+            background-color: var(--primary-blue-light);
+            color: var(--background-white);
+            transform: translateY(-2px);
+        }
+
+        .specializations-list {
+            margin: 30px 0;
+            text-align: left;
+            padding: 0 20px;
+        }
+        .specializations-list h3 {
+            font-family: var(--cinzel-font);
+            color: var(--primary-blue-dark);
+            font-size: 1.2em;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        .specializations-list ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .specializations-list li {
+            background-color: #f7f9fc; /* Very light blue/grey */
+            margin-bottom: 10px;
+            padding: 12px 15px;
+            border-radius: 5px;
+            font-size: 0.95em;
+            color: var(--primary-blue-dark);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            display: flex;
+            align-items: center;
+        }
+        .specializations-list li::before {
+            content: '•';
+            color: var(--primary-blue-light);
+            font-size: 1.5em;
+            line-height: 1;
+            margin-right: 10px;
+        }
+
+        .portfolio-links {
+            margin-top: 30px;
+            padding: 0 15px;
+        }
+        .portfolio-links .link-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 90%;
+            margin: 12px auto;
+            padding: 12px 15px;
+            background-color: var(--primary-blue-dark); /* Darker blue for contrast */
+            color: var(--background-white);
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 1em;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        .portfolio-links .link-btn i {
+            margin-right: 10px;
+            color: var(--background-white);
+        }
+        .portfolio-links .link-btn:hover {
+            background-color: var(--primary-blue-light);
+            transform: translateY(-2px);
+        }
+
+        .signature {
+            margin-top: 40px;
+            font-family: 'Dancing Script', cursive; /* A more calligraphic font for signature style */
+            font-size: 1.6em;
+            color: var(--primary-blue-dark);
+            padding-bottom: 20px;
+        }
+
+        /* Responsive adjustments for smaller screens if max-width is not enough */
+        @media (max-width: 480px) {
+            .container {
+                padding: 15px 10px;
+                box-shadow: none; /* Remove shadow on very small screens for native feel */
+            }
+            .doctor-name {
+                font-size: 1.6em;
+            }
+            .designation {
+                font-size: 0.85em;
+            }
+            .btn-primary, .btn-secondary, .portfolio-links .link-btn {
+                width: 95%;
+                padding: 12px 20px;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="logo-section">
+            <img src="/assets/logo/sj63logo.png" alt="Dr. Shashi Janjirala Logo">
+        </div>
+
+        <h1 class="doctor-name">Dr. Shashi Janjirala</h1>
+        <p class="designation">INTERVENTIONAL CARDIOLOGIST & STRUCTURAL HEART SPECIALIST</p>
+        <p class="credentials">MBBS, MD, DM (Cardiology)</p>
+
+        <div class="portrait">
+            <img src="/assets/images/portraits/drshashi_portrait.png" alt="Dr. Shashi Janjirala Portrait">
+        </div>
+
+        <div class="contact-info">
+            <a href="https://wa.me/918558880602" class="btn-primary" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-whatsapp"></i> Connect via WhatsApp
+            </a>
+            <a href="tel:+918558880602"><i class="fas fa-phone-alt"></i> +91 85588 80602</a>
+            <a href="mailto:shashijanjirala63@gmail.com"><i class="fas fa-envelope"></i> shashijanjirala63@gmail.com</a>
+        </div>
+
+        <a href="#" id="saveContactBtn" class="btn-secondary"><i class="fas fa-address-book"></i> Save to Contacts</a>
+
+        <div class="specializations-list">
+            <h3>Areas of Expertise</h3>
+            <ul>
+                <li>Chronic Total Occlusion (CTO)</li>
+                <li>Transcatheter Aortic Valve Implantation (TAVI)</li>
+                <li>Rotational Atherectomy (ROTA)</li>
+                <li>Complex Endovascular Procedures</li>
+                <li>MitraClip & Structural Interventions</li>
+                <li>Pacemaker & AICD Implantation</li>
+                <li>Deep Vein Thrombosis (DVT) Management</li>
+                <li>Coronary Angiogram & Angioplasty</li>
+            </ul>
+        </div>
+
+        <div class="portfolio-links">
+            <a href="https://shashijanjirala63.com/videos" class="link-btn"><i class="fas fa-video"></i> My Videos</a>
+            <a href="https://shashijanjirala63.com/journal" class="link-btn"><i class="fas fa-newspaper"></i> The Interventional Heart & Vascular Journal</a>
+            <a href="https://shashijanjirala63.com/testimonials" class="link-btn"><i class="fas fa-star"></i> Testimonials & Reviews</a>
+        </div>
+
+        <p class="signature">Dr. Shashi Janjirala</p>
+
+    </div>
+
+    <script>
+        // JavaScript for VCF download
+        document.getElementById('saveContactBtn').addEventListener('click', function(e) {
+            e.preventDefault();
+            const vcard = `BEGIN:VCARD
+VERSION:3.0
+FN:Dr. Shashi Janjirala
+ORG:Interventional Cardiologist & Structural Heart Specialist
+TITLE:Interventional Cardiologist
+TEL;TYPE=WORK,VOICE:+918558880602
+EMAIL;TYPE=PREF,INTERNET:shashijanjirala63@gmail.com
+URL:https://shashijanjirala63.com
+END:VCARD`;
+
+            const blob = new Blob([vcard], { type: 'text/vcard' });
+            const url = URL.createObjectURL(blob);
+            
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'Dr_Shashi_Janjirala.vcf';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        });
+    </script>
+</body>
+</html>

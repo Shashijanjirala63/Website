@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You | Feedback Received</title>
+    <meta name="description" content="Thank you for submitting your private feedback to Dr. Shashi Janjirala's team. Your message has been received.">
+    
+    <link rel="icon" href="/assets/logo/favicon-32x32.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        /* Define color palette */
+        :root {
+            --dark-blue: #1a2a46;
+            --light-blue: #5a88bf;
+            --background-light: #f4f7f6;
+            --white: #ffffff;
+            --success-green: #28a745;
+        }
+
+        /* Basic Setup */
+        body { 
+            font-family: 'Roboto', sans-serif; 
+            margin: 0; 
+            padding: 0; 
+            background-color: var(--background-light); 
+            color: var(--dark-blue); 
+            text-align: center; 
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container { 
+            max-width: 500px; 
+            width: 90%;
+            padding: 40px; 
+            background-color: var(--white); 
+            border-radius: 8px; 
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1); 
+        }
+
+        /* Success Icon */
+        .success-icon {
+            color: var(--success-green);
+            font-size: 4em;
+            margin-bottom: 20px;
+        }
+
+        /* Content Styling */
+        h1 { 
+            color: var(--dark-blue); 
+            font-size: 2em; 
+            margin-bottom: 10px; 
+        }
+
+        p { 
+            font-size: 1.1em; 
+            margin-bottom: 30px; 
+        }
+
+        /* Home Button */
+        .home-button {
+            display: inline-block;
+            background-color: var(--light-blue);
+            color: var(--white);
+            padding: 12px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1em;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        .home-button:hover {
+            background-color: var(--dark-blue);
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <i class="fas fa-check-circle success-icon"></i>
+        
+        <h1>Thank You!</h1>
+        <p>Your confidential feedback has been successfully submitted to Dr. Shashi Janjirala's dedicated team.</p>
+        <p>We appreciate you taking the time to help us improve our services. You will only be contacted if a follow-up is required.</p>
+        
+        <a href="/" class="home-button">Return to Home Page</a>
+    </div>
+</body>
+</html>
